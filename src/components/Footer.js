@@ -18,7 +18,7 @@ const Footer = () => {
     <footer css={tw`print:hidden`} role="contentinfo">
       <StyledFooter css={tw`bg-gray-darker text-gray-lighter text-xs`}>
         <div className="container" css={tw`py-6 lg:p-12`}>
-          <div css={tw`flex flex-wrap justify-between -mx-4`}>
+          <div css={tw`flex flex-no-wrap justify-between -mx-4`}>
             <div css={tw`w-full lg:w-1/2 px-4 mb-6 lg:mb-0`}>
               <div
                 css={tw`flex flex-wrap lg:flex-no-wrap items-center text-white`}
@@ -133,6 +133,14 @@ const Footer = () => {
                     Accessibility
                   </OutboundLink>
                 </li>
+                <li>
+                  <OutboundLink
+                    to="https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
+                    eventLabel="Vulnerability Disclosure Policy link from footer"
+                  >
+                    Vulnerability Disclosure Policy
+                  </OutboundLink>
+                </li>
               </ul>
               <ul>
                 <li>
@@ -155,34 +163,27 @@ const Footer = () => {
       </StyledFooter>
       <div css={tw`bg-gold`}>
         <div className="container" css={tw`py-2 text-center font-bold`}>
-          <p css={tw`lg:hidden mb-4`}>
-            For help finding treatment, call{' '}
-            <OutboundLink
-              eventLabel="Helpline link from mobile footer"
-              to="tel:1-800-662-4357"
-              css={tw`underline whitespace-no-wrap`}
+          <p style={{ display: 'inline' }}>
+            If you are feeling suicidal or in emotional distress, call or text
+            the{' '}
+            <a
+              href="https://988lifeline.org"
+              target="_blank"
+              title="988 Suicide & Crisis Lifeline link from footer"
+              style={{ textDecoration: 'underline' }}
             >
-              1-800-662-HELP (4357)
-            </OutboundLink>
-            .
-          </p>
-          <p>
-            If you are feeling suicidal or in emotional distress, call the{' '}
-            <OutboundLink
-              to="https://suicidepreventionlifeline.org"
-              eventLabel="Suicide prevention link from footer"
-              css={tw`underline`}
-            >
-              Suicide Prevention Lifeline
-            </OutboundLink>{' '}
+              988 Suicide & Crisis Lifeline
+            </a>{' '}
             at{' '}
-            <OutboundLink
-              eventLabel="Suicide prevention hotline link from footer"
-              to="tel:1-800-273-8255"
-              css={tw`underline whitespace-no-wrap`}
+          </p>
+          <p style={{ display: 'inline' }}>
+            <a
+              title="988 Suicide & Crisis Lifeline hotline link from footer"
+              href="tel:988"
+              style={{ textDecoration: 'underline', whiteSpace: 'nowrap' }}
             >
-              1-800-273-8255
-            </OutboundLink>{' '}
+              988
+            </a>{' '}
             | In emergencies, dial 911.
           </p>
         </div>
